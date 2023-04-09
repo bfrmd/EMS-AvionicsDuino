@@ -1,0 +1,8 @@
+Le fichier binaire "Rotax912.OUT" doit être copié sur une carte micro SD,
+et cette dernière doit être insérée dans le slot micro SD de la carte Teensy 4.1. 
+Ceci permet l'affichage d'une photo d'un moteur Rotax 912 lors du lancement du programme.
+
+
+The "Rotax912.OUT" binary file must be copied onto a micro SD card,
+and the latter must be inserted into the micro SD slot of the Teensy 4.1 card.
+This allows a photo of a Rotax 912 engine to be displayed when the program is launched.
