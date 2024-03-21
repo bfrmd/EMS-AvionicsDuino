@@ -5,7 +5,7 @@
   EMS Avionicsduino V 1.6 is free software    
   MIT License (MIT)
   
-  Copyright (c) 2023 AvionicsDuino - benjamin.fremond@avionicsduino.com
+  Copyright (c) 2024 AvionicsDuino - benjamin.fremond@avionicsduino.com
   Contributors : Benjamin Frémond - Gabriel Consigny - Michel Riazuelo
   https://avionicsduino.com/index.php/en/ems-engine-monitoring-system-2/
   
