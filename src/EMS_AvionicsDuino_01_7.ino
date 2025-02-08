@@ -715,7 +715,7 @@ tft.brightness(lcdBrightness*16-1);
  x=650; y=425; 
  printString (str, 40,x,y,RA8875_WHITE, RA8875_BLACK); 
 
- delay(25); // Ce delay(25) donne une itération de loop() environ toutes les 50 ms, en cohérence avec les coefficients de filtrage des différentes valeurs
+ delay(25); // Ce delay(25) donne une itération de loop() environ toutes les 50 ms (20 Hz), en cohérence avec les coefficients de filtrage des différentes valeurs
 
 // ******************************************************************** Envoi éventuel à 5 Hz de tous les paramètres sur la voie série USB pour enregistrement *************************************************************
  if (okSendDataToRecord && recordStarted)
@@ -750,17 +750,17 @@ tft.brightness(lcdBrightness*16-1);
 
    for (uint8_t i = 0; i < 4; i++ ) 
     {
-       msgPA.buf[i] = ((byte*) &nonFilteredManifoldPressure)[i];
+       msgPA.buf[i] = ((byte*) &manifoldPressure)[i];
        msgCHT.buf[i] = ((byte*) &CHT2)[i];
        msgCHT.buf[i+4] = ((byte*) &CHT3)[i];
        msgHuile.buf[i] = ((byte*) &oilTemp)[i];
-       msgHuile.buf[i+4] = ((byte*) &nonFilteredOilPressure)[i];
+       msgHuile.buf[i+4] = ((byte*) &oilPressure)[i];
        msgEGT.buf[i] = ((byte*) &EGT3)[i];
        msgEGT.buf[i+4] = ((byte*) &EGT4)[i];
-       msgAFR_Vbus.buf[i] = ((byte*) &nonFilteredAFR)[i];
-       msgAFR_Vbus.buf[i+4] = ((byte*) &nonFilteredVbus14volts)[i];
-       msgCurrents.buf[i] = ((byte*) &nonFilteredIbus)[i];
-       msgCurrents.buf[i+4] = ((byte*) &nonFilteredIbat)[i];
+       msgAFR_Vbus.buf[i] = ((byte*) &AFR)[i];
+       msgAFR_Vbus.buf[i+4] = ((byte*) &Vbus14volts)[i];
+       msgCurrents.buf[i] = ((byte*) &Ibus)[i];
+       msgCurrents.buf[i+4] = ((byte*) &Ibat)[i];
     }
    CAN_Module_EMS.write(msgPA);
    CAN_Module_EMS.write(msgCHT);
